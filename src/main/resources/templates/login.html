@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>用户登录</h1>
+<form action="userController/login" method="post">
+    账号：<input type="text" name="username" value="qq"><br><br>
+    密码：<input type="text" name="password" value="qq"><br><br>
+    <a href="userController/toForgetPassword">忘记密码?</a><br><br>
+    <input type="submit" value="登录">
+</form>
+
+
+</body>
+</html>

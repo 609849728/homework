@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--
+namespace：命名空间，通常为"包名+SQL映射文件名"
+-->
+<mapper namespace="com.sp.dao.UserDao">
+
+
+    <insert id="addUser" parameterType="User">
+        INSERT INTO t_user(username, password, email) VALUES (#{username},#{password},#{email});
+    </insert>
+
+
+    <select id="login" resultType="User">
+        SELECT * FROM t_user WHERE username = #{username} AND password = #{password}
+    </select>
+
+
+    <select id="getByUsername" resultType="User">
+        SELECT * FROM t_user WHERE username = #{username}
+    </select>
+
+
+    <update id="editPassword" parameterType="User">
+        UPDATE t_user SET password = #{password} WHERE id = #{id}
+    </update>
+
+
+</mapper>
